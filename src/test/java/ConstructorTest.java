@@ -17,10 +17,9 @@ import static org.junit.Assert.assertEquals;
 @RunWith(Parameterized.class)
 public class ConstructorTest {
     private WebDriver driver;
-    private MainPage mainPage;
     private Constructor constructor;
-    private String expected;
-    private Ingredient ingredient;
+    private final String expected;
+    private final Ingredient ingredient;
 
     public ConstructorTest(String expected, Ingredient ingredient) {
         this.expected = expected;
@@ -41,7 +40,6 @@ public class ConstructorTest {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox", "--disable-dev-shm-usage", "--headless");
         driver = new ChromeDriver(options);
-        mainPage = new MainPage(driver);
         constructor = new Constructor(driver);
     }
 

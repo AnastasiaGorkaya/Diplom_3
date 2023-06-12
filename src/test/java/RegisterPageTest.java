@@ -14,12 +14,9 @@ public class RegisterPageTest {
     private WebDriver driver;
     private LoginPage loginPage;
     private RegisterPage registerPage;
-    private MainPage mainPage;
-    private Header header;
-    private UserCabinetPage userCabinetPage;
-    Faker faker = new Faker();
-    User userToRegister;
-    private UserClient api = new UserClient();
+    private User userToRegister;
+    private final Faker faker = new Faker();
+    private final UserClient api = new UserClient();
 
     @Before
     public void setUp() {
@@ -28,9 +25,6 @@ public class RegisterPageTest {
         driver = new ChromeDriver(options);
         registerPage = new RegisterPage(driver);
         loginPage = new LoginPage(driver);
-        mainPage = new MainPage(driver);
-        header = new Header(driver);
-        userCabinetPage = new UserCabinetPage(driver);
     }
 
     @After

@@ -20,9 +20,8 @@ public class LoginPageTest {
     private Header header;
     private RegisterPage registerPage;
     private ForgotPasswordPage forgotPasswordPage;
-    private UserCabinetPage userCabinetPage;
     private User user;
-    private UserClient api = new UserClient();
+    private final UserClient api = new UserClient();
     private ValidatableResponse createdUserResponse;
 
     @Before
@@ -35,7 +34,6 @@ public class LoginPageTest {
         mainPage = new MainPage(driver);
         forgotPasswordPage = new ForgotPasswordPage(driver);
         registerPage = new RegisterPage(driver);
-        userCabinetPage = new UserCabinetPage(driver);
         header = new Header(driver);
 
         user = UserGenerator.getRandomUser();
